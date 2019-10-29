@@ -17,8 +17,8 @@
       <file leaf-file-name="grundlagen_javascript.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/grundlagen_javascript.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="41" column="63" selection-start-line="41" selection-start-column="63" selection-end-line="41" selection-end-column="63" />
+            <state relative-caret-position="162">
+              <caret line="47" column="29" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -116,21 +116,23 @@
       <workItem from="1570535953556" duration="11619000" />
       <workItem from="1570607958268" duration="2492000" />
       <workItem from="1571318113634" duration="1272000" />
+      <workItem from="1572360447737" duration="2115000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15383000" />
+    <option name="totallyTimeSpent" value="17498000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="704" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49747476" visible="true" weight="0.2490242" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5003903" side_tool="true" visible="true" weight="0.3282572" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32912722" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49960968" visible="true" weight="0.3282572" />
       <window_info id="Structure" order="1" sideWeight="0.50252527" side_tool="true" weight="0.24980484" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32912722" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -158,6 +160,13 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/grundlagen_javascript.js">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="41" column="63" selection-start-line="41" selection-start-column="63" selection-end-line="41" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grundlagen_javascript.js">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
         </state>
@@ -172,8 +181,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grundlagen_javascript.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="80">
-          <caret line="41" column="63" selection-start-line="41" selection-start-column="63" selection-end-line="41" selection-end-column="63" />
+        <state relative-caret-position="162">
+          <caret line="47" column="29" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
         </state>
       </provider>
     </entry>

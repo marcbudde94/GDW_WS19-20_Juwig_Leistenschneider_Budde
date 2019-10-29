@@ -39,26 +39,38 @@ var zufallsBewertung = function () {
 
 var bewAktuell;
 
-rl.question('Wie viele Bewertungen sollen ausgeführt werden?', function(n) {
 
-        counter = counter + n;
-        var alleBewertungen = new Array(n);
 
-        let i = n;
-        while(i > 0){
 
-            //bewAktuell = berechneBewertung();
-            bewAktuell = zufallsBewertung();
-            alleBewertungen[i-1] = bewAktuell;
-            i--;
+    rl.question('Wie viele Bewertungen sollen ausgeführt werden?', function (n) {
+
+        n = Number(n);
+        counter = counter +n;
+        if (Number.isInteger(n)) {
+            var alleBewertungen = new Array(n);
+
+            let i = n;
+            while (i > 0) {
+
+                //bewAktuell = berechneBewertung();
+                bewAktuell = zufallsBewertung();
+                alleBewertungen[i - 1] = bewAktuell;
+                i--;
+            }
+
+            for (i = 0; i < n; i++) {
+                console.log(alleBewertungen[i]);
+            }
+
+            gesBewertung(alleBewertungen, counter);
+            console.log(counter);
         }
-
-        for (i = 0; i < n; i++) {
-            console.log(alleBewertungen[i]);
+        else {
+            console.log("falsche Eingabe!")
         }
+    });
 
-        gesBewertung(alleBewertungen,counter);
-});
+
 
 
 // rl.question('Wie hoch ist ihre Bewertung?(0-5)', function(bewAktuell) {
