@@ -1,0 +1,176 @@
+const maxbewertung=5; //maximale sterne an Bewertung
+const minbewertung=0; //minimale sterne an Bewertung
+
+const hello= "hello"; //globale variabel
+var world="egal"; //globale variabel
+let tst="test";  //globale variabel mit "Let"
+
+var sichtbarkeit_1 = ()=>{
+
+    const world ="world";
+    const konkat=world+hello;
+    console.log(konkat);
+};
+
+var sichtbarkeit_2 = ()=>{
+
+    const konkat_2=hello+world;
+    console.log(konkat_2);
+
+};
+
+var sichtbarkeit_3 = ()=>{
+
+    console.log(tst);
+
+};
+
+sichtbarkeit_1();
+sichtbarkeit_2();
+sichtbarkeit_3();
+
+
+const readline = require('readline');  //zum einlesen von der console
+const rl = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
+
+
+var zufallsBewertung = function () {   //zufallszahl zwischen 1 und 5 (max und min-bewertung)
+    return Math.round(Math.random() * (maxbewertung - minbewertung)) + minbewertung;
+};   //eine zufällige zahl wird berechnet
+
+var ges_bewertung= function (array,n) { //berechnet die Durchschnittsbewertung
+
+    var gesamt=0;
+    //  var x=5;
+    // var y=6;
+
+    for (var i=0; i<n; i++) {
+        gesamt=gesamt+array[i];
+    }
+
+    // console.log(`aa:`,array[0]);
+    //console.log(`bb:`,n);
+
+    gesamt=gesamt/n;
+
+    console.log(`\nDurchschnittsbewertung:`,gesamt);
+    //x=x+y;
+    // console.log(`x/y:`,x);
+
+}  //berechnet den durschnitt aller bewertungen
+
+var bewertungsdurchlauf= (object)=>{rl.question("Wieviele Bewertungen möchten sie vornehmen?\n", function (n) {
+
+    var namebewertung = new Array(n); //speichert den Namen der Bewertung
+    var alleBewertungen = new Array(n); //enthält die bewertungen die zufällig erstellt werden
+    var bew_pos;
+    var anz_bewertungen=new Array (0); //aktuelle Anzahl an Bewertungen
+    anz_bewertungen[0]=0;
+    var bewertung_aktuell=new Array (0); //Bewertung wird hier gespeichert
+
+    for (var i = 0; i < n; i++) { //fülle die berwertungen mit zufallsbewertungen, sodass so viee bewertungen entstehen wie eingegeben
+        var zufallsbewertung = zufallsBewertung();
+        //console.log(`Eingegebene Berwertung `+ i , `:`, zufallsbewertung); // Hier geben wir die eingegebene, oder zufällige answer aus
+
+        if (zufallsbewertung > 5 || zufallsbewertung < 1) { //wenn die Zufallsbewertung nicht zwischen 1 und 5 liegt dann gebe einen fehler aus und führe die zufallsbewertung nochmal aus
+            console.log(`Fehler, Bitte geben sie nur Werte von 1-5 ein`);
+            //console.log(`Aktuelle Bewertung =`, bewertung);
+            i--;
+        }
+        else {                                              //wenn die zufallsbewertung zwischen 1 und 5 liegt, dann trage sie ins array allebewertungen ein. Der bewertungscounter wird hochgezählt
+            alleBewertungen[i] = zufallsbewertung;
+            //console.log(`Aktuelle Bewertung =`, bewertung);
+            anz_bewertungen[0] = i + 1;
+        }
+
+    }
+
+    for (var i = 0; i < n; i++) {    //berechnet die namen der bewertungen
+
+        bew_pos = i + 1;
+        namebewertung[i] = `Berwertung_` + bew_pos;
+
+    }
+
+    bewertung_aktuell[0] = namebewertung[n - 1] + " : " + alleBewertungen[n - 1];   //letzter bewertungsname+ eintrag
+
+    console.log("Name:",object.name);
+    console.log(`Anzahl an Bewertungen:`, anz_bewertungen[0]);
+    console.log(`Aktuelle zuletzt eingetragene Bewertungen:`, bewertung_aktuell[0]);
+    console.log(`Alle Bewertung:\n`);
+
+    for (var i = 0; i < n; i++) {    //gibt alle bewertungen aus
+
+        // console.log(`Berwertung`, i + 1, `:`, alleBewertungen[i]);
+        console.log(namebewertung[i], `:`, alleBewertungen[i]);
+
+    }
+
+
+    //Nr1 zusatz
+    /* console.log("\nArraylänge Anzahl der Bewertungen:",anz_bewertungen.length);
+     console.log("Arraylänge Name der Bewertungen:",namebewertung.length);
+     console.log("Arraylänge der zuletzt eingetragenen bewertungen:",bewertung_aktuell.length);
+     */
+
+    object.anz_bewertungen=anz_bewertungen[0];
+    object.letztes_ergebnis=bewertung_aktuell[0];
+
+    var durchschnitt_bewertungen= object.ges_bewertung(alleBewertungen,n);
+
+    console.log(`\nDurchschnittsbewertung:`,durchschnitt_bewertungen);
+
+
+    rl.close();
+
+    process.exit(1);
+
+    });
+}; //Bewertungseinträge werden berechnet
+
+function ratings (name,anz_bewertungen,letztes_ergebnis,bewertungen,n){
+
+    this.name=name;
+    this.anz_bewertungen=anz_bewertungen;
+    this.letztes_ergebnis=letztes_ergebnis;
+    this.bewertungen=bewertungen;
+    this.n=n;
+    let that= this;
+
+
+    this.ges_bewertung = (bewertungen,n) => { //berechnet die Durchschnittsbewertung
+
+        var gesamt=0;
+        //  var x=5;
+        // var y=6;
+
+        for (var i=0; i<n; i++) {
+            gesamt=gesamt+bewertungen[i];
+        }
+        gesamt=gesamt/n;
+
+        //console.log(`\nDurchschnittsbewertung:`,gesamt);
+
+        return gesamt;
+
+    }  //berechnet den durschnitt aller bewertungen
+
+   // ges_bewertung(bewertungen, n);   //durchschnittsbewertung wird berechnet
+
+}; //Klasse für Object ratings
+
+let ratings_1= new ratings("ratings_1"); //Object der Klasse ratings mit dem Namen "ratings_1"
+
+let ratings_2= new ratings("ratings_2"); //Object der Klasse ratings mit dem Namen "ratings_2"
+
+bewertungsdurchlauf(ratings_1);
+//bewertungsdurchlauf(ratings_2);
+
+
+
+/*setTimeout(function () { //Beispiel wie man eine Funktion warten lassen kann
+    console.log(`Eingegebene Bewertung =`,bewertung);
+    }, 4*1000); //4 Sek wartezeit */
