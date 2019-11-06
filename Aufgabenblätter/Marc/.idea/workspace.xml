@@ -14,11 +14,57 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="grundlagen_javascript.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/grundlagen_javascript.js">
+      <file leaf-file-name="grundlagen_javascript.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AB_1/grundlagen_javascript.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="47" column="29" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
+            <state relative-caret-position="697">
+              <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="aufgabenblatt2.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AB_2/aufgabenblatt2.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="63" column="63" selection-start-line="63" selection-start-column="51" selection-end-line="63" selection-end-column="63" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="aufgabenblatt3.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/AB_3/aufgabenblatt3.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="35" column="50" selection-start-line="35" selection-start-column="45" selection-end-line="35" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cities_bearbeiten.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AB_3/cities_bearbeiten.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="cities.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AB_3/cities.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="23" lean-forward="true" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="users.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AB_3/users.json">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="zusammen.json" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AB_3/zusammen.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="28" lean-forward="true" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -36,6 +82,9 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/grundlagen_javascript.js" />
+        <option value="$PROJECT_DIR$/AB_1/grundlagen_javascript.js" />
+        <option value="$PROJECT_DIR$/AB_2/aufgabenblatt2.js" />
+        <option value="$PROJECT_DIR$/AB_3/aufgabenblatt3.js" />
       </list>
     </option>
   </component>
@@ -59,6 +108,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -70,7 +120,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -95,10 +144,22 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Node.js.grundlagen_javascript.js (1)">
+    <configuration name="aufgabenblatt2.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="aufgabenblatt2.js" working-dir="$PROJECT_DIR$/AB_2" />
+    <configuration name="aufgabenblatt3.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="aufgabenblatt3.js" working-dir="$PROJECT_DIR$/AB_3" />
+    <configuration name="grundlagen_javascript.js (1)" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="grundlagen_javascript.js" working-dir="$PROJECT_DIR$/AB_1" />
     <configuration name="grundlagen_javascript.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" nameIsGenerated="true" path-to-js-file="grundlagen_javascript.js" working-dir="$PROJECT_DIR$" />
+    <list>
+      <item itemvalue="Node.js.grundlagen_javascript.js" />
+      <item itemvalue="Node.js.aufgabenblatt3.js" />
+      <item itemvalue="Node.js.grundlagen_javascript.js (1)" />
+      <item itemvalue="Node.js.aufgabenblatt2.js" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.grundlagen_javascript.js (1)" />
+        <item itemvalue="Node.js.aufgabenblatt3.js" />
+        <item itemvalue="Node.js.aufgabenblatt2.js" />
         <item itemvalue="Node.js.grundlagen_javascript.js" />
       </list>
     </recent_temporary>
@@ -117,22 +178,23 @@
       <workItem from="1570607958268" duration="2492000" />
       <workItem from="1571318113634" duration="1272000" />
       <workItem from="1572360447737" duration="2115000" />
+      <workItem from="1573049520739" duration="15241000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17498000" />
+    <option name="totallyTimeSpent" value="32739000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="704" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49747476" visible="true" weight="0.2490242" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49747476" visible="true" weight="0.24895833" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5003903" side_tool="true" visible="true" weight="0.3282572" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50104165" side_tool="true" visible="true" weight="0.3280757" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49960968" visible="true" weight="0.3282572" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49895832" visible="true" weight="0.3280757" />
       <window_info id="Structure" order="1" sideWeight="0.50252527" side_tool="true" weight="0.24980484" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32912722" />
       <window_info id="Favorites" order="2" side_tool="true" />
@@ -158,31 +220,48 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/grundlagen_javascript.js">
+    <entry file="file://$PROJECT_DIR$/grundlagen_javascript.js" />
+    <entry file="file://$PROJECT_DIR$/grundlagen_javascript.js" />
+    <entry file="file://$PROJECT_DIR$/grundlagen_javascript.js" />
+    <entry file="file://$PROJECT_DIR$/grundlagen_javascript.js" />
+    <entry file="file://$PROJECT_DIR$/AB_3/cities_bearbeiten.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AB_1/grundlagen_javascript.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="697">
-          <caret line="41" column="63" selection-start-line="41" selection-start-column="63" selection-end-line="41" selection-end-column="63" />
+          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grundlagen_javascript.js">
+    <entry file="file://$PROJECT_DIR$/AB_2/aufgabenblatt2.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
-          <caret line="21" column="34" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
+          <caret line="63" column="63" selection-start-line="63" selection-start-column="51" selection-end-line="63" selection-end-column="63" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grundlagen_javascript.js">
+    <entry file="file://$PROJECT_DIR$/AB_3/cities.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="867">
-          <caret line="51" column="42" lean-forward="true" selection-start-line="51" selection-start-column="42" selection-end-line="51" selection-end-column="42" />
+        <state relative-caret-position="51">
+          <caret line="3" column="23" lean-forward="true" selection-start-line="3" selection-start-column="23" selection-end-line="3" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grundlagen_javascript.js">
+    <entry file="file://$PROJECT_DIR$/AB_3/users.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AB_3/zusammen.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="47" column="29" selection-start-line="47" selection-start-column="29" selection-end-line="47" selection-end-column="29" />
+        <state relative-caret-position="136">
+          <caret line="8" column="28" lean-forward="true" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AB_3/aufgabenblatt3.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="35" column="50" selection-start-line="35" selection-start-column="45" selection-end-line="35" selection-end-column="50" />
         </state>
       </provider>
     </entry>

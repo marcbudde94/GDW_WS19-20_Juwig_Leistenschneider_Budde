@@ -1,22 +1,24 @@
 {
   "cities": [
     {
-      "vorname": "max",
-      "nachname": "mustermann",
-      "email": "max.mustermann@muster.de",
-      "wohnort": "berlin"
+      "name": "berlin",
+      "einwohner": 3644826,
+      "bundesland": "berlin"
     },
     {
-      "vorname": "bernd",
-      "nachname": "leno",
-      "email": "max.mustermann@muster.de",
-      "wohnort": "stuttgart"
+      "name": "hamburg",
+      "einwohner": 1841179 ,
+      "bundesland": "hamburg"
     },
     {
-      "vorname": "thomas",
-      "nachname": "mueller",
-      "email": "max.mustermann@muster.de",
-      "wohnort": "münchen"
+      "name": "münchen",
+      "einwohner": 1471508,
+      "bundesland": "bayern"
+    },
+    {
+      "name": "köln",
+      "einwohner": 1085664,
+      "bundesland": "nordrhein-westfalen"
     },
     {
       "name": "frankfurt am main",
@@ -47,11 +49,7 @@
       "name": "bremen",
       "einwohner": 554649,
       "bundesland": "bremen"
-    },
-    {
-      "name": "berlin",
-      "einwohner": 3644826,
-      "bundesland": "berlin"
     }
+    
   ]
 }

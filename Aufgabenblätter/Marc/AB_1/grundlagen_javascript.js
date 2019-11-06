@@ -35,9 +35,8 @@ var zufallsBewertung = function () {
     return Math.round(Math.random() * (max - min)) + min;
 };
 
-
-
-var bewAktuell;
+//für Aufgabe 1
+//name("Marc","Budde");
 
 
 
@@ -47,7 +46,9 @@ var bewAktuell;
         n = Number(n);
         counter = counter +n;
         if (Number.isInteger(n)) {
+
             var alleBewertungen = new Array(n);
+            var bewAktuell;
 
             let i = n;
             while (i > 0) {
@@ -63,7 +64,7 @@ var bewAktuell;
             }
 
             gesBewertung(alleBewertungen, counter);
-            console.log(counter);
+            //console.log(counter);
         }
         else {
             console.log("falsche Eingabe!")

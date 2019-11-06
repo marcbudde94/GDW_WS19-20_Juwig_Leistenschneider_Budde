@@ -25,13 +25,12 @@ function Rating( name, anzahl, last, all) {
     this.durchschnitt = () => { //Aufgabe 4 arrow
                             let summe = 0;
                             let erg = 0;
-                            for (let i = 0; i < this.anzahl; i++) {
-                                summe = summe + this.all[i];
-                                erg = summe / this.anzahl;
-                            }
+                                for (let i = 0; i < this.anzahl; i++) {
+                                    summe = summe + this.all[i];
+                                    erg = summe / this.anzahl;
+                                }
                             return erg;
                             };
-
 };
 
 
@@ -65,12 +64,13 @@ let erstelleRating = () => rl.question('Wie viele Bewertungen sollen ausgeführt
             console.log("durchschnitt: " + rating1.durchschnitt());
 
             return rating1;
+            rl.close();
         }
 
         else {
             console.log("falsche Eingabe!")
         }
-    });
+});
 
 
 let rating1 = erstelleRating();
@@ -89,19 +89,18 @@ let rating1 = erstelleRating();
 
 const hello = "hello";
 
-function moin (){
+function helloworld (){
     const world = hello + " World";
     console.log(world);
 };
 
-function gutenTag (){
-    const world = " World" + hello;
+function worldhello (){
+    const world = "World " + hello;
     console.log(world);
 };
 
-//moin();
-
-//gutenTag();
+//helloworld();
+//worldhello();
 
 
 
