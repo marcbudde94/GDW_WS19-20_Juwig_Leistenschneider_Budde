@@ -34,46 +34,52 @@ function Rating( name, anzahl, last, durchschnitt) {
 };
 
 
-let durchläufe = function (anzahlbewertungen) {
+let durchläufe = function (callback) {
     rl.question("Wie viele Bewertungsdurchgänge möchten sie machen?", (n) => {
         console.log(n);
 
-        anzahlbewertungen(n);
+        callback(n);
     })
 };
 
+var counter=0; // zählt wie oft rl.question ausgeführt wurde
+
+var recursiveAsyncReadLine = function (x) {
 
 
-    var recursiveAsyncReadLine = function (x) {
-
-        var counter=0;
 
         rl.question('Wie viele Bewertungen sollen berechnet werden? ', function (n) {
-                n = Number(n);
-            if (Number.isInteger(n)) {
 
-                var alleBewertungen = new Array(n);
+                counter++; // counter wird hochgezählt, da readline ausgeführt wurde
+                n = Number(n); //integer cast
+
+                if (Number.isInteger(n)) { //abfrage ob Eingabe eine Zahl war
+
+                var alleBewertungen = new Array(n);// Array das alle Bewertungen Speichert
 
                 let i = n;
-                while (i > 0) {
+                while (i > 0) { //schleife füllt das Array mit zufallsbewerungen
                     let bewAktuell = zufallsBewertung();
                     alleBewertungen[i - 1] = bewAktuell;
                     i--;
                 }
 
-                for (i = 0; i < n; i++) {
+                for (i = 0; i < n; i++) { //gibt alle Werte des Arrays aus
                     console.log(alleBewertungen[i]);
                 }
 
-                gesBewertung(alleBewertungen, n);
-                counter++;
+                //vergleicht den Counter mit der Anzahl an Bewertungsdurchgängen die ausgeführt werden soll
+                //falls der Counter counter kleiner ist wird die Methode rekusiv aufgerufen
+                //so lange bis die Anzahl an Bewertungsdurchgängen erreicht wurde
                 if(counter<x)
                 {
-                    recursiveAsyncReadLine(); //Calling this function again to ask new question
+                    recursiveAsyncReadLine(x); //Calling this function again to ask new question
                 }
                 else {
                     return rl.close();
                 }
+
+                //let rating1 = new Rating("rating1", x, alleBewertungen(n-1))
 
             }
             else {
