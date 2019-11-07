@@ -1,0 +1,55 @@
+{
+  "cities": [
+    {
+      "name": "berlin",
+      "einwohner": 3644826,
+      "bundesland": "berlin"
+    },
+    {
+      "name": "hamburg",
+      "einwohner": 1841179 ,
+      "bundesland": "hamburg"
+    },
+    {
+      "name": "münchen",
+      "einwohner": 1471508,
+      "bundesland": "bayern"
+    },
+    {
+      "name": "köln",
+      "einwohner": 1085664,
+      "bundesland": "nordrhein-westfalen"
+    },
+    {
+      "name": "frankfurt am main",
+      "einwohner": 753056,
+      "bundesland": "hessen"
+    },
+    {
+      "name": "stuttgart",
+      "einwohner": 634830,
+      "bundesland": "baden-württemberg"
+    },
+    {
+      "name": "düsseldorf",
+      "einwohner": 619294,
+      "bundesland": "nordrhein-westfalen"
+    },
+    {
+      "name": "leipzig",
+      "einwohner": 587857,
+      "bundesland": "sachsen"
+    },
+    {
+      "name": "dortmund",
+      "einwohner": 587010,
+      "bundesland": "nordrhein-westfalen"
+    },
+    {
+      "name": "bremen",
+      "einwohner": 554649,
+      "bundesland": "bremen"
+    }
+    
+  ]
+}

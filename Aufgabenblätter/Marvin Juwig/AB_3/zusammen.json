@@ -1,0 +1,28 @@
+{
+  "user": [
+    {
+      "vorname": "max",
+      "nachname": "mustermann",
+      "email": "max.mustermann@muster.de",
+      "wohnort": "berlin",
+      "einwohner": 3644826,
+      "bundesland": "berlin"
+    },
+    {
+      "vorname": "thomas",
+      "nachname": "mueller",
+      "email": "max.mustermann@muster.de",
+      "wohnort": "münchen",
+      "einwohner": 1471508,
+      "bundesland": "bayern"
+    },
+    {
+      "vorname": "bernd",
+      "nachname": "leno",
+      "email": "max.mustermann@muster.de",
+      "wohnort": "stuttgart",
+      "einwohner": 634830,
+      "bundesland": "baden-württemberg"
+    }
+  ]
+}

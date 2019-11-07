@@ -1,0 +1,22 @@
+{
+  "users": [
+    {
+        "vorname": "max",
+        "nachname": "mustermann",
+        "email": "max.mustermann@muster.de",
+        "wohnort": "berlin"
+    },
+    {
+        "vorname": "bernd",
+        "nachname": "leno",
+        "email": "max.mustermann@muster.de",
+        "wohnort": "stuttgart"
+    },
+    {
+        "vorname": "thomas",
+        "nachname": "mueller",
+        "email": "max.mustermann@muster.de",
+        "wohnort": "münchen"
+    }
+  ]
+}
