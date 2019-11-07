@@ -1,0 +1,26 @@
+[
+  {
+    "vorname" : "Max",
+    "nachname": "Mustermann",
+    "email": "max@mustermann.de",
+    "wohnort": "Koeln"
+  }
+  {
+    "vorname" : "Timo",
+    "nachname": "Horn",
+    "email": "timo@horn.de",
+    "wohnort": "Berlin"
+  }
+  {
+    "vorname" : "Marcel",
+    "nachname": "Schmidt",
+    "email": "marcel@schmidt.de",
+    "wohnort": "Stuttgart"
+  }
+  {
+    "vorname" : "Philipp",
+    "nachname": "Müller",
+    "email": "philipp@mueller.de",
+    "wohnort": "Test"
+  }
+]
