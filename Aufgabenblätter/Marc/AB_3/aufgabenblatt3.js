@@ -10,9 +10,12 @@ let stadt2 = {
     "bundesland": "berlin"
 };
 
+//gibt promise zurück
 var read = util.promisify(fs.readFile);
 
 
+//.all erstellt ein Array
+//dadurch laufen die readFile abfragen parallel und werden nicht hintereinander ausgeführt
 Promise
     .all([
         read("cities.json"),
@@ -60,7 +63,7 @@ Promise
             console.log('Data written to file');
         });
     })
-    .catch(err =>{
+    .catch(err =>{ //Asynchrones Error-Handling mit Promises
     console.log("moin");
     console.log(err);
     });
