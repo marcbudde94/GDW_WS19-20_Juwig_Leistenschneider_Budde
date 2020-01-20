@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 const lebensmittelSchema = mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
+    userID: String,
     name: {type: String, required: true},
     istAbzugeben: Boolean,
     reserviertVon: String,

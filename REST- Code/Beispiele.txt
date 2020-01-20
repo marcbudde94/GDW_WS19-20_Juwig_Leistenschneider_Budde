@@ -1,0 +1,58 @@
+{
+	"name": "Mustermann",
+	"firstName": "Max",
+	"street": "Musterallee 5",
+	"plz": "11111",
+	"ort": "Musterstadt"
+}
+
+{
+	"name": "Musterfrau",
+	"firstName": "Marie",
+	"street": "Musterallee 27",
+	"plz": "11111",
+	"ort": "Musterstadt"
+}
+{
+	"name": "Testfrau",
+	"firstName": "Mari",
+	"street": "Musterstraße 29",
+	"plz": "11113",
+	"ort": "Musterstadt"
+}
+[{"propName": "firstName", "value": "Marie"}]
+
+{
+	"name": "banana",
+	"istAbzugeben": "true",
+	"reserviertVon": "null"
+}
+
+{
+	"name": "banane",
+	"istAbzugeben": "true",
+	"reserviertVon": "null"
+}
+
+{
+	"name": "apple",
+	"istAbzugeben": "true",
+	"reserviertVon": "null"
+}
+
+{
+	"name": "onion",
+	"istAbzugeben": "false",
+	"reserviertVon": "null"
+}
+
+{
+	"name": "garlic",
+	"istAbzugeben": "false",
+	"reserviertVon": "null"
+}
+
+[{"propName": "istAbzugeben", "value": "false"}]
+
+Wenn ich einen User lösche, muss auch das Lebensmittel dazu gelöscht werden
+
