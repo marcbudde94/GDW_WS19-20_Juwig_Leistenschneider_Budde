@@ -6,10 +6,10 @@ const lebensmittelSchema = mongoose.Schema({
     name: {type: String, required: true},
     istAbzugeben: Boolean,
     reserviertVon: String,
-    protein: Number,
-    fett: Number,
-    kohlenhydrate: Number,
-    kcal: Number
+    protein: { type: Number, default: 0 },
+    fett: { type: Number, default: 0 },
+    kohlenhydrate: { type: Number, default: 0 },
+    kcal: { type: Number, default: 0 }
 });
 
 module.exports = mongoose.model('Lebensmittel', lebensmittelSchema);

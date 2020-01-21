@@ -124,9 +124,9 @@ router.delete("/:userId", (req, res, next) => {
 //Erhalte die Lebensmittelliste des Users
 router.get("/:userID/lebensmittel", (req, res, next) => {
     const ID = req.params.userID;
-    //Lebensmittel.find({ userID: ID })
+    Lebensmittel.find({ userID: ID })
     //falls man alle Lebensmittel sehen will, diese Zeile rein nehmen, dafür obere auskommentieren
-    Lebensmittel.find()
+    //Lebensmittel.find()
         .exec()
         .then(docs => {
             console.log(docs);
@@ -318,6 +318,135 @@ router.delete("/", (req, res, next) => {
         });
 });
 
+
+router.get("/:userID/resultierendeGerichte", (req, res, next) => {
+
+    const userID = req.params.userID;
+
+    //Abfrage unserer Lebensmittel eines Users
+    var options = {
+        'method': 'GET',
+        'url': 'https://food-sharing-app.herokuapp.com/users/5e26da0faf084812c8255258/lebensmittel',
+        'headers': {
+            'Content-Type': 'application/json'
+        }
+    };
+    new Promise
+    ((resolve, reject) => {
+        request(options, function (error, response) {
+            if (error) {
+                reject(error);
+            }
+            else {
+                // Antwort wird zu JSON formatiert
+                var eigeneLebensmittel =JSON.parse(response.body);
+                resolve(eigeneLebensmittel);
+                console.log(eigeneLebensmittel);
+            }
+        });
+    })
+        //Übergabe unserer Lebensmittel
+        .then(eigeneLebensmittel => {
+
+            //Array, wo unsere Lebensmittel Namen einzeln abgespeichert werden
+            var foodnames = [];
+            for(let i=0; i<eigeneLebensmittel.length; i++){
+                foodnames.push(eigeneLebensmittel[i].name);
+            }
+            //test, wie unser Lebensmittelnamen Array aussieht
+            console.log('Unsere Lebensmittel: ' + foodnames);
+
+
+            //Abfrage der Gerichte aus der API mit unseren Lebensmittelnamen
+            var options = { method: 'GET',
+                url: 'http://www.recipepuppy.com/api/?i=' + foodnames,
+                //qs: { i: foodnames, p: '1' },
+                headers:
+                    {'cache-control': 'no-cache' }
+            };
+
+            new Promise
+            ((resolve,reject)=>{
+                request(options, function (err, response, body) {
+                    if (err){
+                        reject(err);
+                    }
+                    else{
+                        // Antwort wird zu JSON formatiert
+                        let recipe = JSON.parse(body);
+                        resolve(recipe);
+                       // console.log(recipe);
+                    }
+                });
+            })
+                .then(recipe => {
+                    var gerichtKohlenhydrate =0;
+                    var gerichtKcal=0;
+                    var gerichtFett=0;
+                    var gerichtProtein=0;
+                    // Falls es keine Ergebnisse zum angegebenen Lebensmitteln gibt wird Fehler geworfen
+                    if(recipe.results.length == 0){
+                        throw err = new ResourceNotFoundError('ingredients', options.qs.i);
+                    }
+                    //Array, mit den Zutaten der Gerichte mit Kommas und Leerstellen
+                    var ingredientsRaw = [];
+                    //Variable, um Zutaten zu einem String zu packen
+                    var ingredientsString;
+
+                    for (let i=0; i<recipe.results.length; i++){
+                        ingredientsRaw.push(recipe.results[i].ingredients);
+                        //console.log(ingredients12);
+                        ingredientsString=ingredientsRaw.toString();
+                        ingredientsString=ingredientsString.replace(/\s/g,'');
+                        var ingredientsArr = ingredientsString.split(',');
+
+                        //Counter, ob alle Variablen übereinstimmen
+                        //Doppelte For-Schleife, um zu überprüfen, ob unsere Lebensmittel mit den Zutaten übereinstimmen
+                        var count=0;
+                        for (let k=0; k<ingredientsArr.length; k++){
+                            for (let j=0; j<foodnames.length; j++){
+
+                                if(ingredientsArr[k] === foodnames[j]) {
+                                    count++;
+                                    //Berechnung aller Nährwerte für das Gericht
+                                    gerichtFett= gerichtFett + eigeneLebensmittel[j].fett;
+                                    gerichtKcal= gerichtKcal + eigeneLebensmittel[j].kcal;
+                                    gerichtKohlenhydrate= gerichtKohlenhydrate + eigeneLebensmittel[j].kohlenhydrate;
+                                    gerichtProtein= gerichtProtein + eigeneLebensmittel[j].protein;
+
+                                }}}
+                        //Wenn Count so groß ist wie die Länge der Zutaten(alle Zutaten sind vorhanden), dann Ergebnis ausgeben
+                        if(count===ingredientsArr.length){
+//hier noch einfügen: Nährwerte zusammen rechnen, Ausgabe der Namen mit den Zutaten, Ausgabe der Nährwerte
+                            console.log('Gericht: ' + recipe.results[i].title);
+                            console.log('Zutaten: ' + recipe.results[i].ingredients);
+                            console.log('GerichtFett: ' + Number((gerichtFett).toFixed(2)));
+                            console.log('GerichtKohlenhydrate: ' + Number((gerichtKohlenhydrate).toFixed(2)));
+                            console.log('GerichtProtein: ' + Number((gerichtProtein).toFixed(2)));
+                            console.log('GerichtKcal: ' + Number((gerichtKcal).toFixed(2)));
+                        }
+                        //leert ingredients array
+                        ingredientsRaw.pop();
+                        //Nährwerte wieder null setzen für das nächste Gericht
+                        gerichtFett=0;
+                        gerichtKcal=0;
+                        gerichtProtein=0;
+                        gerichtKohlenhydrate=0;
+                        count=0;
+                    }
+                })
+                .catch(err => {
+                    console.log(err);
+                });
+
+        })
+        .catch(error => {
+            console.log(error);
+            res.status(500).json({
+                error: error
+            });
+        });
+});
 
 
 module.exports = router;
