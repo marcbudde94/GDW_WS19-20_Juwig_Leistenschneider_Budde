@@ -29,14 +29,14 @@ new Promise
 })
     .then(food => {
 
+        console.log(food);
         food = JSON.parse(food);
-
         console.log(food.parsed);
         console.log(food.parsed.length);
 
 
         if(food.parsed.length == 0){ // Falls es keine Ergebnisse zum Angegebenen Lebensmittel gibt wird Fehler geworfen
-            throw err = new ResourceNotFoundError('ingredients', options.qs.ingr);
+            throw err = new ResourceNotFoundError('Lebensmittel', options.qs.ingr);
         }
 
     })

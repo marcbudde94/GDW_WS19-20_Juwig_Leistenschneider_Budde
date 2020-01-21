@@ -14,5 +14,8 @@
     "mongoose": "^5.8.9",
     "morgan": "^1.9.1",
     "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
   }
 }
