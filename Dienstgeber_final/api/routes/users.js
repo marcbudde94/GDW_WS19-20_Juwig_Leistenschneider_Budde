@@ -326,7 +326,7 @@ router.get("/:userID/resultierendeGerichte", (req, res, next) => {
     //Abfrage unserer Lebensmittel eines Users
     var options = {
         'method': 'GET',
-        'url': 'https://food-sharing-app.herokuapp.com/users/5e26da0faf084812c8255258/lebensmittel',
+        'url': 'https://food-sharing-app.herokuapp.com/users/' + userID + '/lebensmittel',
         'headers': {
             'Content-Type': 'application/json'
         }
@@ -393,6 +393,7 @@ router.get("/:userID/resultierendeGerichte", (req, res, next) => {
                     //Variable, um Zutaten zu einem String zu packen
                     var ingredientsString;
 
+                    var antwortArray = [];
                     for (let i=0; i<recipe.results.length; i++){
                         ingredientsRaw.push(recipe.results[i].ingredients);
                         //console.log(ingredients12);
@@ -415,16 +416,31 @@ router.get("/:userID/resultierendeGerichte", (req, res, next) => {
                                     gerichtProtein= gerichtProtein + eigeneLebensmittel[j].protein;
 
                                 }}}
-                        //Wenn Count so groß ist wie die Länge der Zutaten(alle Zutaten sind vorhanden), dann Ergebnis ausgeben
-                        if(count===ingredientsArr.length){
-//hier noch einfügen: Nährwerte zusammen rechnen, Ausgabe der Namen mit den Zutaten, Ausgabe der Nährwerte
-                            console.log('Gericht: ' + recipe.results[i].title);
-                            console.log('Zutaten: ' + recipe.results[i].ingredients);
-                            console.log('GerichtFett: ' + Number((gerichtFett).toFixed(2)));
-                            console.log('GerichtKohlenhydrate: ' + Number((gerichtKohlenhydrate).toFixed(2)));
-                            console.log('GerichtProtein: ' + Number((gerichtProtein).toFixed(2)));
-                            console.log('GerichtKcal: ' + Number((gerichtKcal).toFixed(2)));
-                        }
+                         //Wenn Count so groß ist wie die Länge der Zutaten(alle Zutaten sind vorhanden), dann Ergebnis ausgeben
+                         if(count===ingredientsArr.length){
+
+                            //console.log('Gericht: ' + recipe.results[i].title);
+                            //console.log('Zutaten: ' + recipe.results[i].ingredients);
+                            //console.log('GerichtFett: ' + Number((gerichtFett).toFixed(2)));
+                            //console.log('GerichtKohlenhydrate: ' + Number((gerichtKohlenhydrate).toFixed(2)));
+                            //console.log('GerichtProtein: ' + Number((gerichtProtein).toFixed(2)));
+                            //console.log('GerichtKcal: ' + Number((gerichtKcal).toFixed(2)));
+
+                            /*antwortArray.push("Gericht: " + recipe.results[i].title);
+                            antwortArray.push("Zutaten: " + recipe.results[i].ingredients);
+                            antwortArray.push("Fett: " + Number((gerichtFett).toFixed(2)));
+                            antwortArray.push("Kohlenhydrate: " + Number((gerichtKohlenhydrate).toFixed(2)));
+                            antwortArray.push("Protein: " + Number((gerichtProtein).toFixed(2)));
+                            antwortArray.push("Kcal: " + Number((gerichtKcal).toFixed(2)));*/
+
+                            antwortArray.push({ 'Test': recipe.results[i].title,
+                                                'Zutaten' : recipe.results[i].ingredients,
+                                                'GerichtFett': Number((gerichtFett).toFixed(2)),
+                                                'GerichtKohlenhydrate': Number((gerichtKohlenhydrate).toFixed(2)),
+                                                'GerichtProtein': Number((gerichtProtein).toFixed(2)),
+                                                'GerichtKcal': Number((gerichtKcal).toFixed(2))
+                            })
+                         }
                         //leert ingredients array
                         ingredientsRaw.pop();
                         //Nährwerte wieder null setzen für das nächste Gericht
@@ -434,9 +450,26 @@ router.get("/:userID/resultierendeGerichte", (req, res, next) => {
                         gerichtKohlenhydrate=0;
                         count=0;
                     }
+                    if(antwortArray.length > 0){
+                        console.log(antwortArray);
+                        res.status(200).json({
+                            message: antwortArray
+                        })
+                    }
+                    else{
+                        console.log("Keine Gerichte gefunden");
+                        res.status(500).json({
+                            error: "Keine Gerichte gefunden"
+                        })
+                    }
+
+
                 })
                 .catch(err => {
                     console.log(err);
+                    res.status(500).json({
+                        //error: error
+                    });
                 });
 
         })
