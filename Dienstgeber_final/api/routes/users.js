@@ -155,7 +155,7 @@ router.post('/:userID/lebensmittel', (req, res, next) => {
                 app_id: '9a036e31',
                 app_key: '34cc33028da034f70dfeaa37342b2063',
                 'nutrition-type': 'logging',
-                ingr: req.body.name,
+                ingr: req.body.name, //der Name des Lebensmittels welcher im Body eingetragen wurde
                 category: 'Generic%20foods'
             },
         headers:
@@ -168,7 +168,7 @@ router.post('/:userID/lebensmittel', (req, res, next) => {
 
     new Promise
     ((resolve, reject) => {
-        request(options, function (err, response, body) {
+        request(options, function (err, response, body) { //GET request auf externen Webservice
             if (err) {
                 reject(err);
             }
@@ -183,13 +183,14 @@ router.post('/:userID/lebensmittel', (req, res, next) => {
             if (food.parsed.length == 0) { // Falls es keine Ergebnisse zum Angegebenen Lebensmittel gibt wird Fehler geworfen
                 throw err = new ResourceNotFoundError('Lebensmittel', options.qs.ingr);
             }
-
+            //hier werden den oben angelegten variablen die Werte aus der Datenbank zugewiesen
             protein = food.parsed[0].food.nutrients.PROCNT;
             fett = food.parsed[0].food.nutrients.FAT;
             kohlenhydrate = food.parsed[0].food.nutrients.CHOCDF;
             kcal = food.parsed[0].food.nutrients.ENERC_KCAL;
 
         })
+        //hier wird das neue Lebensmittel angelegt und mit werten gefüllt
         .then(food =>{
             const lebensmittel = new Lebensmittel({
                 _id: new mongoose.Types.ObjectId(),
